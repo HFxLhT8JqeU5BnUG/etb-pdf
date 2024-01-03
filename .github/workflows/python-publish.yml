@@ -33,9 +33,9 @@ jobs:
         pip install poetry
         poetry install
     - name: Build package
-      run: poetry publish --build
+      run: poetry publish --build -u __token__ -p ${{ secrets.PyPi_TOKEN }}
     - name: Publish package
       uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
-      with:
-        user: __token__
-        password: ${{ secrets.PyPi_TOKEN }}
+#      with:
+#        user: __token__
+#        password: ${{ secrets.PyPi_TOKEN }}
