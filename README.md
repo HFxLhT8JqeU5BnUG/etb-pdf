@@ -1,3 +1,5 @@
+[![Upload Python Package](https://github.com/HFxLhT8JqeU5BnUG/etb-pdf/actions/workflows/python-publish.yml/badge.svg)](https://github.com/HFxLhT8JqeU5BnUG/etb-pdf/actions/workflows/python-publish.yml)
+
 Pdf.write() args:
 
 rows: list of dictionaries of data to be filled into PDF
