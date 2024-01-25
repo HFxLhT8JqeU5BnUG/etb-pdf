@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Iterable
 from PyPDF2 import PdfReader, PdfWriter
 
 
@@ -15,11 +15,16 @@ class Pdf:
 
 
     def write(self, rows: list[dict[str, Any]] = None, map: dict[str, str] = None, 
-              naming: dict[str, str] = None):
+              naming: dict[str, str] = None, required_keys: bool | Iterable = True):
         '''check the README for more info'''
 
         if map is not None:
-            assert all(value in row for value in map.values() for row in rows)
+            if required_keys:
+                if isinstance(required_keys, bool):
+                    required_keys = map.values()
+
+                assert all(value in row for value in required_keys for row in rows)
+            
             data = [{key : row[value] for key, value in map.items()}
                     for row in rows]
 

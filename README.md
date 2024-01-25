@@ -21,3 +21,7 @@ naming["dynamic_name_key"] will be appended after a underscore. it will pull the
 for example (using the rows and map from above), if naming = {"static_name" : "output", "dynamic_name_key" : "Name"}
 
 then the file names will be: "output_John.pdf" and "output_Jane.pdf"
+
+required_keys: *if map is not None*: if True, all values in map dictionary will be asserted
+
+if you pass an iterable, then each value in the map dictionary that is in the iterable will be asserted
